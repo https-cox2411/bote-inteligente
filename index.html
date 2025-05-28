@@ -2,71 +2,103 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EcoBin - Gestión de Residuos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoBin - Educación y Reciclaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background: #f0f8ff; color: #333; }
-    h1, h2 { color: #2e7d32; }
-    section { margin-bottom: 30px; padding: 15px; background: #e8f5e9; border-radius: 8px; }
-    a { color: #1b5e20; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    form { background: #c8e6c9; padding: 15px; border-radius: 8px; }
-    input[type="text"] {
-      padding: 8px; width: 100%; margin-bottom: 10px; border: 1px solid #4caf50; border-radius: 4px;
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      color: #333;
     }
-    button {
-      background-color: #4caf50; color: white; padding: 10px 15px; border: none; border-radius: 4px;
-      cursor: pointer; font-size: 16px;
+    header {
+      background-color: #2ecc71;
+      padding: 1.5rem;
+      text-align: center;
+      color: white;
     }
-    button:hover { background-color: #388e3c; }
-    #message { margin-top: 10px; font-weight: bold; color: #2e7d32; }
+    h1 {
+      margin: 0;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .infografias img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem 0;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .puntos {
+      font-weight: bold;
+      color: #2ecc71;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2ecc71;
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <h1>EcoBin - Gestión Inteligente de Residuos</h1>
+  <header>
+    <h1>EcoBin - Educación y Reciclaje</h1>
+    <p>¡Gracias por escanear el código QR! 🌱</p>
+  </header>
+  <main>
+    <section>
+      <h2>🎓 ¿Qué es EcoBin?</h2>
+      <p>EcoBin es un proyecto educativo que promueve la conciencia ambiental en nuestra institución. Aquí aprenderás a separar residuos, cuidar el medio ambiente y participar activamente en un cambio positivo.</p>
+    </section>
 
-  <section>
-    <h2>Información educativa</h2>
-    <ul>
-      <li><a href="https://www.gob.mx/semarnat/articulos/como-separar-residuos-en-casa-para-proteger-el-medio-ambiente" target="_blank" rel="noopener noreferrer">Guía de reciclaje y separación de residuos</a></li>
-      <li><a href="https://www.unenvironment.org/es/temas/residuos" target="_blank" rel="noopener noreferrer">Impacto ambiental de los residuos</a></li>
-    </ul>
-  </section>
+    <section class="infografias">
+      <h2>♻️ Infografías y Reglas</h2>
+      <p>Haz clic para ver o descargar:</p>
+      <ul>
+        <li><a href="https://www.gob.mx/aprendemx/articulos/acciones-faciles-y-sencillas-para-reciclar-en-casa?idiom=es" target="_blank">📄 Acciones fáciles y sencillas para reciclar en casa</a></li>
+        <li><a href="https://www.ccacoalition.org/sites/default/files/resources/Manual%20sobre%20Gestion%20Residuos%20Organicos%20Escuelas%202019.pdf" target="_blank">📘 Manual sobre Gestión de Residuos Orgánicos en Escuelas</a></li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Reglas del Centro Educativo sobre Gestión de Residuos</h2>
-    <p>1. Depositar residuos en los contenedores adecuados.</p>
-    <p>2. No arrojar basura fuera de los botes.</p>
-    <p>3. Colaborar en el reciclaje y reducir el desperdicio.</p>
-    <p>4. Reportar cualquier daño o mal funcionamiento del contenedor.</p>
-  </section>
+    <section>
+      <h2>📝 Reporte o Sugerencia</h2>
+      <form action="https://formsubmit.co/TU_CORREO@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <textarea name="mensaje" rows="4" placeholder="Escribe aquí tu reporte o sugerencia" required></textarea>
+        <button type="submit">Enviar</button>
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </section>
 
-  <section>
-    <h2>Reporte o Sugerencias</h2>
-    <form id="ecobinForm" target="hidden_iframe" onsubmit="submitted=true;">
-      <label for="studentName">Nombre del estudiante que escanea el QR:</label><br/>
-      <input type="text" id="studentName" name="entry.1475700103" required placeholder="Tu nombre aquí" /><br/>
-      <button type="submit">Enviar reporte/sugerencia</button>
-    </form>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-    <div id="message"></div>
-  </section>
-
-  <script>
-    let form = document.getElementById('ecobinForm');
-    let message = document.getElementById('message');
-    let submitted = false;
-
-    form.addEventListener('submit', function(event) {
-      setTimeout(() => {
-        if(submitted) {
-          message.textContent = '¡Gracias por tu reporte! Tu participación suma puntos para ti.';
-          form.reset();
-          submitted = false;
-        }
-      }, 1000);
-    });
-  </script>
+    <section>
+      <h2>🎮 Reconocimiento al Estudiante</h2>
+      <p>¡Gracias por participar! Has ganado <span class="puntos">+5 puntos</span> en tu cuenta EcoBin. Sigue participando para más recompensas. 🏆</p>
+    </section>
+  </main>
+  <footer>
+    Proyecto EcoBin © 2025
+  </footer>
 </body>
 </html>
+
 
